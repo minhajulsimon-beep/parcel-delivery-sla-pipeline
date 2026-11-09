@@ -1,0 +1,23 @@
+{
+  "valid_scan_events": 3110,
+  "rejected_row_count": 4,
+  "rejected_by_reason": [
+    {
+      "rejection_reason": "event_before_creation",
+      "occurrences": 1
+    },
+    {
+      "rejection_reason": "invalid_event_type",
+      "occurrences": 1
+    },
+    {
+      "rejection_reason": "invalid_timestamp",
+      "occurrences": 1
+    },
+    {
+      "rejection_reason": "unknown_parcel_id",
+      "occurrences": 1
+    }
+  ],
+  "parcels_without_scans": 0
+}

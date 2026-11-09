@@ -1,0 +1,6 @@
+region,parcel_count,delivered_count,on_time_count,late_count,open_overdue_count,average_transit_hours,on_time_pct
+West,171,126,97,29,45,53.44,77.0
+South,163,120,87,33,43,54.11,72.5
+East,160,122,82,40,38,56.6,67.2
+North,158,123,88,35,35,52.37,71.5
+Central,148,107,77,30,41,56.3,72.0

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parcel Delivery | SLA Control Panel</title>
+<style>
+:root { color-scheme: light; font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #f4f7fa; color: #13283d; }
+header { background: #112940; color: #fff; padding: 48px max(24px, calc((100vw - 1120px) / 2)); }
+header .eyebrow { color: #73c6d6; font-size: 12px; font-weight: 750; letter-spacing: 2px; text-transform: uppercase; }
+header h1 { font-size: clamp(28px, 4vw, 39px); margin: 10px 0 8px; letter-spacing: -1.5px; }
+header p { margin: 0; color: #bbcad7; font-size: 14px; line-height: 1.7; }
+main { max-width: 1168px; margin: auto; padding: 26px 24px 64px; }
+.metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 25px; }
+.metric { background: #fff; padding: 24px; border: 1px solid #e4eaf0; border-radius: 12px; box-shadow: 0 2px 8px #102a4010; }
+.metric-label { font-size: 13px; color: #586f80; font-weight: 650; }
+.metric-value { font-size: 32px; font-weight: 760; margin: 10px 0 9px; letter-spacing: -1px; }
+.metric-caption { font-size: 12px; color: #748899; line-height: 1.4; }
+.panel { background: #fff; border: 1px solid #e4eaf0; border-radius: 12px; padding: 25px; margin-bottom: 18px; overflow: auto; }
+h2 { font-size: 17px; letter-spacing: -0.25px; margin: 0 0 8px; }
+.panel-sub { color: #6b8091; font-size: 13px; margin: 0 0 16px; line-height: 1.6; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 560px; }
+th { text-align: left; padding: 11px 8px; color: #688092; border-bottom: 1px solid #e9eef2; font-weight: 650; }
+td { padding: 14px 8px; border-bottom: 1px solid #edf1f4; }
+tr:last-child td { border-bottom: 0; }
+.number { text-align: left; font-variant-numeric: tabular-nums; }
+.entity { font-weight: 650; }
+.performance { min-width: 175px; white-space: nowrap; }
+.bar-bg { display: inline-block; height: 8px; width: 92px; background: #e8eff3; border-radius: 10px; margin-right: 9px; vertical-align: middle; overflow: hidden; }
+.bar-fill { display: block; height: 100%; background: #2697a9; border-radius: 10px; }
+.rate { font-size: 12px; color: #486476; font-variant-numeric: tabular-nums; }
+.columns { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+ul.issues { list-style: none; padding: 0; margin: 14px 0 0; font-size: 13px; }
+.issues li { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #edf1f4; }
+.issues li:last-child { border: 0; }
+code { color: #286678; background: #ecf5f7; padding: 2px 6px; border-radius: 4px; }
+.note { font-size: 12px; color: #6b8091; line-height: 1.7; }
+footer { color: #6b8091; font-size: 12px; margin-top: 22px; line-height: 1.7; }
+@media (max-width: 780px) { .metrics { grid-template-columns: repeat(2, 1fr); } .columns { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .metrics { grid-template-columns: 1fr; } header { padding-top: 34px; padding-bottom: 34px; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">Operational analytics / Synthetic sample data</div>
+  <h1>Parcel delivery SLA control panel</h1>
+  <p>Shipment-level service performance reconstructed from operational scan events.<br>
+  Reference date: 2026-11-05T00:00:00Z UTC</p>
+</header>
+<main>
+  <section class="metrics"><div class='metric'><div class='metric-label'>Total parcels</div><div class='metric-value'>800</div><div class='metric-caption'>Shipment records</div></div><div class='metric'><div class='metric-label'>Delivered</div><div class='metric-value'>598</div><div class='metric-caption'>74.8% of all parcels</div></div><div class='metric'><div class='metric-label'>On-time delivery</div><div class='metric-value'>72.1%</div><div class='metric-caption'>Of delivered parcels only</div></div><div class='metric'><div class='metric-label'>Open &amp; overdue</div><div class='metric-value'>202</div><div class='metric-caption'>Not delivered by reference date</div></div><div class='metric'><div class='metric-label'>Late deliveries</div><div class='metric-value'>167</div><div class='metric-caption'>Delivered after the promised time</div></div><div class='metric'><div class='metric-label'>Exception history</div><div class='metric-value'>155</div><div class='metric-caption'>Parcels with at least one exception scan</div></div></section>
+  <section class="panel"><h2>Regional performance</h2>
+    <p class="panel-sub">Delivery punctuality for each region, based on the promised timestamp.</p>
+    <table><thead><tr><th>Region</th><th>Parcels</th><th>Delivered</th><th>On-time rate</th><th>Open overdue</th></tr></thead><tbody><tr><td class='entity'>West</td><td class='number'>171</td><td class='number'>126</td><td class='performance'><span class='bar-bg'><span class='bar-fill' style='width:77.0%'></span></span><span class='rate'>77.0%</span></td><td class='number'>45</td></tr><tr><td class='entity'>South</td><td class='number'>163</td><td class='number'>120</td><td class='performance'><span class='bar-bg'><span class='bar-fill' style='width:72.5%'></span></span><span class='rate'>72.5%</span></td><td class='number'>43</td></tr><tr><td class='entity'>East</td><td class='number'>160</td><td class='number'>122</td><td class='performance'><span class='bar-bg'><span class='bar-fill' style='width:67.2%'></span></span><span class='rate'>67.2%</span></td><td class='number'>38</td></tr><tr><td class='entity'>North</td><td class='number'>158</td><td class='number'>123</td><td class='performance'><span class='bar-bg'><span class='bar-fill' style='width:71.5%'></span></span><span class='rate'>71.5%</span></td><td class='number'>35</td></tr><tr><td class='entity'>Central</td><td class='number'>148</td><td class='number'>107</td><td class='performance'><span class='bar-bg'><span class='bar-fill' style='width:72.0%'></span></span><span class='rate'>72.0%</span></td><td class='number'>41</td></tr></tbody></table>
+  </section>
+  <section class="panel"><h2>Carrier comparison</h2>
+    <p class="panel-sub">Compare service levels without treating undelivered parcels as on-time.</p>
+    <table><thead><tr><th>Carrier</th><th>Parcels</th><th>Delivered</th><th>On-time rate</th><th>Open overdue</th></tr></thead><tbody><tr><td class='entity'>Carrier A</td><td class='number'>297</td><td class='number'>221</td><td class='performance'><span class='bar-bg'><span class='bar-fill' style='width:71.0%'></span></span><span class='rate'>71.0%</span></td><td class='number'>76</td></tr><tr><td class='entity'>Carrier C</td><td class='number'>253</td><td class='number'>192</td><td class='performance'><span class='bar-bg'><span class='bar-fill' style='width:76.0%'></span></span><span class='rate'>76.0%</span></td><td class='number'>61</td></tr><tr><td class='entity'>Carrier B</td><td class='number'>250</td><td class='number'>185</td><td class='performance'><span class='bar-bg'><span class='bar-fill' style='width:69.2%'></span></span><span class='rate'>69.2%</span></td><td class='number'>65</td></tr></tbody></table>
+  </section>
+  <section class="columns">
+    <div class="panel"><h2>Data quality</h2>
+      <p class="panel-sub">Rejected source records are quarantined rather than loaded silently.</p>
+      <div class="note">Accepted scan events: <strong>3,110</strong><br>
+      Rejected source rows: <strong>4</strong><br>
+      Parcels without any scan: <strong>0</strong></div>
+      <ul class="issues"><li><code>event_before_creation</code><span>1</span></li><li><code>invalid_event_type</code><span>1</span></li><li><code>invalid_timestamp</code><span>1</span></li><li><code>unknown_parcel_id</code><span>1</span></li></ul>
+    </div>
+    <div class="panel"><h2>Metric definitions</h2>
+      <p class="note"><strong>On-time delivery:</strong> Delivered at or before the promised UTC timestamp.
+      The denominator includes delivered parcels only.</p>
+      <p class="note"><strong>Open overdue:</strong> Not delivered and the promise timestamp is earlier than
+      the report reference date.</p>
+      <p class="note"><strong>Exception history:</strong> Any exception scan, even if delivery later succeeded.</p>
+      <p class="note"><strong>Average delivery time:</strong> 54.51 hours
+      among delivered parcels.</p>
+    </div>
+  </section>
+  <footer>This is a reproducible demonstration with generated data, not live carrier performance.
+  Source files and SQL logic are available in the repository.</footer>
+</main>
+</body>
+</html>

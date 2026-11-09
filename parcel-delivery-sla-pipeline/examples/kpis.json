@@ -1,0 +1,12 @@
+{
+  "parcel_count": 800,
+  "delivered_count": 598,
+  "on_time_count": 431,
+  "late_count": 167,
+  "open_overdue_count": 202,
+  "parcels_with_exceptions": 155,
+  "average_transit_hours": 54.51,
+  "on_time_pct": 72.1,
+  "delivery_completion_pct": 74.8,
+  "as_of": "2026-11-05T00:00:00Z"
+}
